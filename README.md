@@ -15,7 +15,7 @@ This project was designed to demonstrate the student's knowledge of core React c
 The project utilizes the following:
 * React library for state management and rendering - [ReactJS](https://reactjs.org/)
 * Bootstrap 4.5.2 for styling - [Bootstrap 4.5](https://getbootstrap.com/docs/4.5/getting-started/introduction/)
-* Open Iconic for button icons - [Open Iconic](https://useiconic.com/open)
+* Bootstrap icons for button icons - [Bootstrap Icons](https://icons.getbootstrap.com)
 * JSON Server for local preview - [JSON Server](https://www.npmjs.com/package/json-server)
 
 ## Application Preview
