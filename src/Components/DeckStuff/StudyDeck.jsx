@@ -61,7 +61,7 @@ const StudyDeck = () => {
 
         <h1>{deck.name}: Study</h1>
 
-        <div className="deck-container">
+        {card && <div className="deck-container">
           <h5>
             Card {currentCardNumber} of {deck.cards.length}
           </h5>
@@ -78,7 +78,7 @@ const StudyDeck = () => {
               Next
             </button>
           )}
-        </div>
+        </div>}
       </div>
     );
   }
