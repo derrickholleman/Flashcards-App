@@ -26,4 +26,4 @@ The project utilizes the following:
 
 ![Not Found](src/images/flashcards-notFound.png)
 
-Check out the ![Backend Repo](https://github.com/derrickholleman/Flashcards-server)
+Check out the [Backend Repo](https://github.com/derrickholleman/Flashcards-server)
