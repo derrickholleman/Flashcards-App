@@ -50,24 +50,6 @@
     {
       "front": "test",
       "back": "test",
-      "id": 7,
-      "deckId": 1
-    },
-    {
-      "front": "b",
-      "back": "bbb",
-      "id": 8,
-      "deckId": 1
-    },
-    {
-      "front": "testt",
-      "back": "testttt",
-      "deckId": 1,
-      "id": 9
-    },
-    {
-      "front": "test",
-      "back": "test",
       "deckId": 2,
       "id": 10
     }
