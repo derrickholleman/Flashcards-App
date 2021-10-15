@@ -15,6 +15,7 @@ build/
 .eslintcache
 .DS_Store
 .env
+.env.production
 .env.*
 !.env.sample
 .idea/
