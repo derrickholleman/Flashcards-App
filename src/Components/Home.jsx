@@ -5,14 +5,21 @@ import "./Home.css";
 
 const Home = () => {
   const [decks, setDecks] = useState([]);
+  const [loading, setLoading] = useState(false)
 
   const loadDecks = () => {
-    listDecks().then(setDecks);
+    listDecks().then(setDecks).then(setLoading(true))
   };
 
   useEffect(() => {
-    loadDecks();
-  }, []);
+    loadDecks()
+    if (decks.length > 0) {
+     setLoading(false)
+    }
+  }, [decks.length]);
+
+  console.log(loading)
+  console.log(decks)
 
   const handleDelete = (deckId) => {
     const confirmDelete = window.confirm(
@@ -23,6 +30,10 @@ const Home = () => {
       deleteDeck(deckId).then(loadDecks);
     }
   };
+
+  if (loading) {
+    return <p style={{color:"red", fontSize:"1.5rem"}}>Fetching Decks!  Please wait :)</p>
+  }
 
   return (
     <div className="container">
