@@ -5,7 +5,6 @@ import "./Home.css";
 
 const Home = () => {
   const [decks, setDecks] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   const loadDecks = () => {
     listDecks().then(setDecks);
@@ -13,10 +12,7 @@ const Home = () => {
 
   useEffect(() => {
     loadDecks();
-    if (decks.length > 0) {
-      setLoading(false);
-    }
-  }, [decks.length]);
+  }, []);
 
   const handleDelete = (deckId) => {
     const confirmDelete = window.confirm(
@@ -28,7 +24,7 @@ const Home = () => {
     }
   };
 
-  if (loading) {
+  if (decks.length === 0) {
     return (
       <div>
         <p style={{ color: "red", fontSize: "1.5rem" }}>
