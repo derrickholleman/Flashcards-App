@@ -30,9 +30,16 @@ const Home = () => {
 
   if (loading) {
     return (
-      <p style={{ color: "red", fontSize: "1.5rem" }}>
-        Fetching Decks! Please wait :)
-      </p>
+      <div>
+        <p style={{ color: "red", fontSize: "1.5rem" }}>
+          Fetching Decks! Please wait :)
+        </p>
+        <Link to="/decks/new">
+          <button className="btn btn-secondary">
+            <i class="bi bi-plus-lg"></i> Create Deck
+          </button>
+        </Link>
+      </div>
     );
   }
 
