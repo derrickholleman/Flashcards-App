@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Toast, Button, ToastContainer } from "react-bootstrap";
 
 const DeckForm = ({ handleSubmit, deck, setDeck }) => {
   const initNewDeck = {
@@ -13,9 +14,9 @@ const DeckForm = ({ handleSubmit, deck, setDeck }) => {
     if (!deck) {
       handleSubmit(newDeck);
     } else {
-      handleSubmit(deck)
+      handleSubmit(deck);
     }
-    
+
     setNewDeck({ ...initNewDeck });
   };
 
@@ -104,6 +105,35 @@ const DeckForm = ({ handleSubmit, deck, setDeck }) => {
           </div>
         </form>
       )}
+
+      {/* TOAST EXAMPLE */}
+          {/* <Button onClick={toggleShowA} className="mb-2">
+            Toggle Toast <strong>with</strong> Animation
+          </Button>
+          // const [showA, setShowA] = useState(false);
+
+          // const toggleShowA = () => setShowA(!showA);
+          
+          <ToastContainer
+            style={{ position: "fixed", right: "0px", bottom: "10px" }}
+          >
+            <Toast
+              show={showA}
+              onClose={() => setShowA(false)}
+              show={showA}
+              delay={3000}
+              autohide
+              bg={"primary"}
+            >
+              <Toast.Header closeButton={false}>
+                <strong className="me-auto mx-2">Flashcards</strong>
+                <small>now</small>
+              </Toast.Header>
+              <Toast.Body>
+                Woohoo, you're reading this text in a Toast!
+              </Toast.Body>
+            </Toast>
+         </ToastContainer> */}
     </div>
   );
 };
