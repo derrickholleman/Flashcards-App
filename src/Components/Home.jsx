@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { listDecks, deleteDeck } from "../utils/api";
 import "./Home.css";
 
 const Home = () => {
   const [decks, setDecks] = useState([]);
-
-  const loadDecks = () => {
-    listDecks().then(setDecks);
-  };
+  const history = useHistory();
 
   useEffect(() => {
-    loadDecks();
+    listDecks().then(setDecks);
   }, []);
 
   const handleDelete = (deckId) => {
@@ -20,7 +17,8 @@ const Home = () => {
     );
 
     if (confirmDelete) {
-      deleteDeck(deckId).then(loadDecks);
+      deleteDeck(deckId);
+      history.go();
     }
   };
 
