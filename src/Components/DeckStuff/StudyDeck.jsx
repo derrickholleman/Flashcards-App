@@ -7,7 +7,7 @@ const StudyDeck = () => {
   // sets state with cards where deckId matches deck.id
   const [deck, setDeck] = useState({ cards: [] });
   const [currentCardNumber, setCurrentCardNumber] = useState(1);
-  const [cardSide, setCardSide] = useState("front");
+  const [isCardFront, setIsCardFront] = useState(true);
   const { deckId } = useParams();
   const history = useHistory();
 
@@ -18,9 +18,9 @@ const StudyDeck = () => {
 
   const handleNext = () => {
     setCurrentCardNumber((currentCardNumber) => currentCardNumber + 1);
-    setCardSide("front");
+    setIsCardFront(true);
 
-    if (currentCardNumber === deck.cards.length && cardSide === "back") {
+    if (currentCardNumber === deck.cards.length && !isCardFront) {
       const goBackToHomePage = !window.confirm(
         "Restart cards?\n\nClick 'cancel' to return to the home page"
       );
@@ -29,7 +29,7 @@ const StudyDeck = () => {
         history.push("/");
       } else {
         setCurrentCardNumber(1);
-        setCardSide("front");
+        setIsCardFront(true);
       }
     }
   };
@@ -61,24 +61,25 @@ const StudyDeck = () => {
 
         <h1>{deck.name}: Study</h1>
 
-        {card && <div className="deck-container">
-          <h5>
-            Card {currentCardNumber} of {deck.cards.length}
-          </h5>
-          {cardSide === "front" && <p>{card.front}</p>}
-          {cardSide === "back" && <p>{card.back}</p>}
-          <button
-            className="btn btn-secondary flip-btn"
-            onClick={() => setCardSide("back")}
-          >
-            Flip
-          </button>
-          {cardSide === "back" && (
-            <button className="btn btn-primary" onClick={handleNext}>
-              Next
+        {card && (
+          <div className="deck-container">
+            <h5>
+              Card {currentCardNumber} of {deck.cards.length}
+            </h5>
+            {isCardFront ? <p>{card.front}</p> : <p>{card.back}</p>}
+            <button
+              className="btn btn-secondary flip-btn"
+              onClick={() => setIsCardFront(!isCardFront)}
+            >
+              Flip
             </button>
-          )}
-        </div>}
+            {!isCardFront && (
+              <button className="btn btn-primary" onClick={handleNext}>
+                Next
+              </button>
+            )}
+          </div>
+        )}
       </div>
     );
   }
