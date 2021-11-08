@@ -18,7 +18,7 @@ const Home = () => {
 
     if (confirmDelete) {
       deleteDeck(deckId);
-      history.go();
+      listDecks().then(setDecks);
     }
   };
 
