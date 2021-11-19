@@ -16,11 +16,11 @@ then:
 ## Start the project using Docker
 In the project root directory, you can run:
 
-```docker build . -t derrickholleman/flashcards```
+### ```docker build . -t derrickholleman/flashcards```
 
 then execute the command:
 
-```docker run -p 3000:3000 -p 5000:5000 derrickholleman/flashcards```
+### ```docker run -p 3000:3000 -p 5000:5000 derrickholleman/flashcards```
 
 afterwards visit http://localhost:3000/ to view the project
 
