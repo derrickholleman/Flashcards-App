@@ -62,7 +62,7 @@ const CardForm = ({ handleSubmit, card = {} }) => {
           </div>
           <div className="create-deck-btns">
             <Link to={`/decks/${deckId}`}>
-              <button className="btn btn-secondary">Done</button>
+              <button className="btn btn-secondary">Cancel</button>
             </Link>
             <button type="submit" className="btn btn-primary">
               Save
@@ -100,7 +100,7 @@ const CardForm = ({ handleSubmit, card = {} }) => {
           </div>
           <div className="create-deck-btns">
             <Link to={`/decks/${deckId}`}>
-              <button className="btn btn-secondary">Done</button>
+              <button className="btn btn-secondary">Cancel</button>
             </Link>
               <button
                 type="submit"
